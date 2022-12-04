@@ -1,5 +1,4 @@
 # Read file input.txt
-
 def priority(c):
     if c >= 'A' and c <= 'Z':
         return ord(c) - ord('A') + 27
@@ -7,7 +6,6 @@ def priority(c):
         return ord(c) - ord('a') + 1
 
 with open("input.txt", "r") as f:
-    # Read file
     lines = f.read().splitlines()
     sum = 0
     for line in lines:

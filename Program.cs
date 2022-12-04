@@ -10,10 +10,6 @@ class Program {
             if (File.Exists(inputPath)) {
                 string input = File.ReadAllText(inputPath);
                 Type type = problemList.First(x => x.Name == $"Day{day}");
-                if (type == null) {
-                    Console.WriteLine($"Day {day} not found");
-                    return;
-                }
                 if (Activator.CreateInstance(type, input) is Problem problem) {
                     PrintProblemOutput(problem);
                 } else {
@@ -24,7 +20,6 @@ class Program {
             }
         } else {
             Console.WriteLine("No day specified");
-            // LIST POSSIBLE DAYS
             Console.WriteLine("Possible days:");
             Console.WriteLine("{0}", string.Join(", ", problemList.Select(x => x.Name.Substring(3)).Order()));
         }
