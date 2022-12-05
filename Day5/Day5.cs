@@ -6,9 +6,9 @@ class Day5 : Problem
     public Day5(string input) : base(input) { }
     public override string SolvePart1()
     {
-        string[] parts = input.Split("\r\n\r\n");
+        string[] parts = input.Split(Environment.NewLine + Environment.NewLine);
         string stackInput = parts[0];
-        string[] lines = stackInput.Split("\r\n");
+        string[] lines = stackInput.Split(Environment.NewLine);
 
 
         Stack<char>[] stacks = new Stack<char>[9];
@@ -23,13 +23,12 @@ class Day5 : Problem
                 }
             }
         }
-        string[] moves = parts[1].Split("\r\n");
+        string[] moves = parts[1].Split(Environment.NewLine);
         foreach (string move in moves) {
             string[] nums = move.Split(" ");
             int amount = int.Parse(nums[1]);
             int from = int.Parse(nums[3]);
             int to = int.Parse(nums[5]);
-            Console.WriteLine($"Moving {amount} from {from} to {to}");
             for (int i = 1; i <= amount; i++) {
                 stacks[to-1].Push(stacks[from-1].Pop());
             }
@@ -45,9 +44,9 @@ class Day5 : Problem
 
     public override string SolvePart2()
     {
-        string[] parts = input.Split("\r\n\r\n");
+        string[] parts = input.Split(Environment.NewLine + Environment.NewLine);
         string stackInput = parts[0];
-        string[] lines = stackInput.Split("\r\n");
+        string[] lines = stackInput.Split(Environment.NewLine);
 
 
         Stack<char>[] stacks = new Stack<char>[9];
@@ -62,14 +61,12 @@ class Day5 : Problem
                 }
             }
         }
-        string[] moves = parts[1].Split("\r\n");
+        string[] moves = parts[1].Split(Environment.NewLine);
         foreach (string move in moves) {
             string[] nums = move.Split(" ");
             int amount = int.Parse(nums[1]);
             int from = int.Parse(nums[3]);
             int to = int.Parse(nums[5]);
-            Console.WriteLine($"Moving {amount} from {from} to {to}");
-
             // Just use a temp stack for part 2
             Stack<char> tmp = new Stack<char>();
             for (int i = 1; i <= amount; i++) {
