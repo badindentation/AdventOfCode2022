@@ -3,6 +3,7 @@
 namespace AdventOfCode2022;
 class Program {
     static void Main(string[] args) {
+
         Type[] problemList = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.Name.StartsWith("Day")).ToArray();
         if (args.Length > 0) {
             int day = int.Parse(args[0]);
