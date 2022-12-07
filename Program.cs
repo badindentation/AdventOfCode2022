@@ -10,6 +10,9 @@ class Program {
             string inputPath = $"day{day}/input.txt";
             if (File.Exists(inputPath)) {
                 string input = File.ReadAllText(inputPath);
+                if (args.Length >= 2) {
+                    input = args[1];
+                }
                 Type type = problemList.First(x => x.Name == $"Day{day}");
                 if (Activator.CreateInstance(type, input) is Problem problem) {
                     PrintProblemOutput(problem);
