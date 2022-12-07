@@ -38,7 +38,11 @@ class Program {
 
     private static void PrintProblemOutput(Problem problem) {
         Console.WriteLine(problem.GetType().Name);
-        Console.WriteLine("Part 1: " + problem.SolvePart1());
-        Console.WriteLine("Part 2: " + problem.SolvePart2());
+        
+        string part1 = problem.SolvePart1();
+        string part2 = problem.SolvePart2();
+
+        Console.WriteLine($"\nPart 1: {part1}");
+        Console.WriteLine($"Part 2: {part2}");
     }
 }
