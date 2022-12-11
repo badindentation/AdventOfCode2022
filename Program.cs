@@ -13,7 +13,7 @@ class Program {
         {
             Console.WriteLine("Please specify a day to run.");
             Console.WriteLine("Possible days:");
-            Console.WriteLine("{0}", string.Join(", ", problemList.Select(x => x.Name.Substring(3)).Order()));
+            Console.WriteLine("{0}", string.Join(", ", problemList.Select(x => int.Parse(x.Name.Substring(3))).Order()));
             return;
         }
 

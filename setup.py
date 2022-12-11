@@ -21,7 +21,8 @@ def main(argc, argv):
     response = requests.get(url, cookies=jar)
 
     current_directory = os.getcwd()
-    day_str = "Day" + str(today.day)
+    day = today.day if argc < 1 else int(argv[0])
+    day_str = "Day" + str(day) 
     day_directory = os.path.join(current_directory, day_str) 
 
     if not os.path.exists(day_directory):
