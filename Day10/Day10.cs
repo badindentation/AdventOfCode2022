@@ -57,7 +57,7 @@ class Day10 : Problem {
         }
         if (Math.Abs(x - (pixel % 40)) <= 1) 
         {
-            crt.Append('#');
+            crt.Append('\u2588');
         }
         else 
         {
