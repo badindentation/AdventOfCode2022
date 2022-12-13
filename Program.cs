@@ -17,6 +17,7 @@ class Program {
             return;
         }
 
+        bool test = args.Length > 1 && (args[1] == "test" || args[1] == "t" || args[1] == "true");
         int day;
 
         if (args[0].Equals("all")) 
@@ -24,20 +25,20 @@ class Program {
             foreach (Type type in problemList) 
             {
                 day = int.Parse(type.Name.Substring(3));
-                TryRunProblem(day, problemList);
+                TryRunProblem(day, problemList, test);
             }
             return;
         }
 
         day = int.Parse(args[0]);
 
-        string customInput = args.Length >= 2 ? args[1] : null; 
-        TryRunProblem(day, problemList, customInput);
+        string customInput = args.Length >= 2 && !test ? args[1] : null; 
+        TryRunProblem(day, problemList, test, customInput);
     }
 
-    private static void TryRunProblem(int day, Type[] problemList, string additionalInput = null) 
+    private static void TryRunProblem(int day, Type[] problemList, bool test, string additionalInput = null) 
     {
-        string inputPath = $"Day{day}/input.txt";
+        string inputPath = test ? $"Day{day}/test.txt" : $"Day{day}/input.txt";
 
         if (!File.Exists(inputPath)) 
         {
