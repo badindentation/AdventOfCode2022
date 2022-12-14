@@ -8,13 +8,13 @@ class Template : Problem {
 
     public override string SolvePart1()
     {
-        string result = string.Empty;
-        return result;
+        string[] lines = input.TrimEnd().Split(Environment.NewLine);
+        return "";
     }
 
     public override string SolvePart2()
     {
-        string result = string.Empty;
-        return result;
+        string[] lines = input.TrimEnd().Split(Environment.NewLine);
+        return "";
     }
 }

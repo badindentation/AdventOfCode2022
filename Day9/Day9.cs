@@ -123,7 +123,7 @@ class Day9 : Problem {
             {
                 MoveHead(rope, direction);
                 // Console.WriteLine("Tail: " + tail.x + ", " + tail.y);
-                Console.WriteLine(visited.Count);
+                // Console.WriteLine(visited.Count);
                 
                 (int, int) coords = (tail.x, tail.y);
                 visited.Add(coords);
