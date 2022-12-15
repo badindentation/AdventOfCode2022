@@ -62,12 +62,10 @@ class Program {
 
     private static void PrintProblemOutput(Problem problem) {
         Console.WriteLine(problem.GetType().Name);
-        
         string part1 = problem.SolvePart1();
         string part2 = problem.SolvePart2();
 
         Console.WriteLine($"Part 1: {part1}");
         Console.WriteLine($"Part 2: {part2}");
-        Console.WriteLine();
     }
 }

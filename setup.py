@@ -1,6 +1,5 @@
 import os
 import datetime
-import urllib.request
 import requests
 
 input_url = "https://adventofcode.com/{year}/day/{day}/input"
