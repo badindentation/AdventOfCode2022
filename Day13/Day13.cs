@@ -82,8 +82,6 @@ class Day13 : Problem
     {
         string[] pairs = input.TrimEnd().Split(Environment.NewLine + Environment.NewLine);
 
-        int result = 0;
-
         JsonNode div1 = JsonNode.Parse("[[2]]");
         JsonNode div2 = JsonNode.Parse("[[6]]");
 
