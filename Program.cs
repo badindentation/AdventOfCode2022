@@ -3,6 +3,8 @@
 namespace AdventOfCode2022;
 
 class Program {
+
+    public static bool DISPLAY_OUTPUT = false;
     static void Main(string[] args) {
         Type[] problemList = Assembly.GetExecutingAssembly().GetTypes()
             .Where(x => x.Name.StartsWith("Day"))
